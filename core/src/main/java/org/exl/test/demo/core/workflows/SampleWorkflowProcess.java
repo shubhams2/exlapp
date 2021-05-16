@@ -31,7 +31,7 @@ public class SampleWorkflowProcess implements WorkflowProcess {
 
 		final WorkflowData workflowData = workItem.getWorkflowData();
 		final String type = workflowData.getPayloadType();
-		Date date = null;
+		Date activationDate = null;
 
 		// Check if the payload is a path in the JCR; The other (less common) type is JCR_UUID
 		if (!StringUtils.equals(type, "JCR_PATH")) {
@@ -50,25 +50,20 @@ public class SampleWorkflowProcess implements WorkflowProcess {
 			// Get activationDate property set by user in dialog participant step - which is the second node in workflow history
 			String strDate= (String)workflowHistory.get(0).getNextHistryItem().getWorkItem().getMetaDataMap().get("activationDate");
 
-
 			if(strDate == null || strDate.isEmpty()){
 				log.info("---- activationDate is either null or empty - "+ strDate);
 			}else {
 				log.info("---- activationDate - "+ strDate);
 
-				try {
-					SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSSXXX");
-					date = sdf.parse(strDate);
-				}catch(ParseException e) {
-					log.info("---- Unable to parse activationDate in SampleWorkflowProcess - "+ e.getMessage());
-				}
+				//Parse String date to Date object
+				activationDate = getDate(strDate);
 
-				if(date != null) {
+				if(activationDate != null) {
 					// Getting the metadata map
 					MetaDataMap map = workItem.getWorkflow().getWorkflowData().getMetaDataMap();
 					// Set workflow absoluteTime to activationDate by user
-					log.info("---- Set workflow absoluteTime - "+ date);
-					map.put("absoluteTime", date);
+					log.info("---- Set workflow absoluteTime - "+ activationDate);
+					map.put("absoluteTime", activationDate);
 				}
 
 			}
@@ -77,4 +72,17 @@ public class SampleWorkflowProcess implements WorkflowProcess {
 		}
 
 	}
+
+	private Date getDate(String datetime) {
+		Date date= null;
+		try {
+			SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSSXXX");
+			date = sdf.parse(datetime);
+		}catch(ParseException e) {
+			log.info("---- Unable to parse activationDate in SampleWorkflowProcess - "+ e.getMessage());
+		}
+
+		return date;
+	}
+
 }
