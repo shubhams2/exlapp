@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<workspaceFilter version="1.0">
+    <filter root="/conf/exlapp" mode="merge"/>
+    <filter root="/conf/global/settings/workflow/models/schedule-page-activation" mode="merge"/>
+    <filter root="/content/exlapp" mode="merge"/>
+    <filter root="/content/dam/exlapp" mode="merge"/>
+    <filter root="/content/experience-fragments/exlapp" mode="merge"/>
+    <filter root="/home/users/system/ydwBtDU_5fEpfba_eMbF" mode="merge"/>
+</workspaceFilter>

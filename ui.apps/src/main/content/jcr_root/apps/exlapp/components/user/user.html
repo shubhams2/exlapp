@@ -1,0 +1,30 @@
+
+User Component - Showcases Java Use API
+
+
+<div data-sly-use.heroTextObject="org.exl.test.demo.core.models.HeroRestComponent">
+
+     <h1>AEM 6.4 HTL Restful example</h1>
+
+       <h3>Employee Details: ${heroTextObject.heroTextBean.myJSON_Response}</h3>
+       <h3>Employee Code: ${heroTextObject.heroTextBean.employee_code}</h3>
+<br>
+       ${heroTextObject.heroTextBean.myJSON_Response}
+
+</div>
+
+<script>
+$.ajax({     
+	type : "POST",     
+    	url : '/bin/submitdata',     
+        /*data : {         
+        pass your request parameter here, currently we are not passing any data     
+        },*/     
+        success : function(data, textStatus, jqXHR) {         
+        //write your logic that you need to perform on sucess                           
+        },     
+        error : function(XMLHttpRequest, textStatus, errorThrown) {         
+        //write your logic that you need to perform on error     
+        } 
+        });
+</script>

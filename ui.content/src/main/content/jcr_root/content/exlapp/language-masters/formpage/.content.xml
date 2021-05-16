@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="cq:Page">
+    <jcr:content
+        cq:lastModified="{Date}2020-11-28T07:50:57.534Z"
+        cq:lastModifiedBy="admin"
+        cq:template="/conf/exlapp/settings/wcm/templates/page-content"
+        jcr:primaryType="cq:PageContent"
+        jcr:title="formpage"
+        sling:resourceType="exlapp/components/page">
+        <root
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="exlapp/components/container">
+            <container
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="exlapp/components/container">
+                <title
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="exlapp/components/title"/>
+                <container
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="exlapp/components/container"
+                    layout="responsiveGrid">
+                    <aemform
+                        jcr:created="{Date}2020-11-28T07:49:52.624Z"
+                        jcr:createdBy="admin"
+                        jcr:lastModified="{Date}2020-11-28T07:50:57.527Z"
+                        jcr:lastModifiedBy="admin"
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="fd/af/components/aemform"
+                        formRef="/content/dam/formsanddocuments/helpx/timeoffrequestform"
+                        formType="adaptiveForm"
+                        submitType="inline"
+                        textIsRich="true"
+                        thankyouConfig="message"
+                        thankyouMessage="&lt;p>Thanks for submitting the form.&lt;/p>&#xd;&#xa;"
+                        useiframe="true"/>
+                </container>
+            </container>
+        </root>
+    </jcr:content>
+</jcr:root>
