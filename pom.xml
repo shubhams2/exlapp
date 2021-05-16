@@ -23,9 +23,9 @@
 		<module>ui.apps</module>
 		<module>ui.apps.structure</module>
 		<module>ui.content</module>
-		<module>it.tests</module>
+		<!-- <module>it.tests</module>
 		<module>it.launcher</module>
-		<!-- <module>dispatcher</module> <module>dispatcher.ams</module> <module>dispatcher.cloud</module> 
+		<module>dispatcher</module> <module>dispatcher.ams</module> <module>dispatcher.cloud</module> 
 			<module>ui.frontend.general</module> <module>ui.frontend.angular</module> 
 			<module>ui.frontend.react</module> -->
 	</modules>
